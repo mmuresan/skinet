@@ -1,4 +1,14 @@
+# ignore any files in ssl folder
+ssl
+
+# compiled output
 obj
 bin
 appsettings.json
 *.db
+/dist
+/tmp
+/out-tsc
+
+# Only exists if Bazel was run
+/bazel-out
