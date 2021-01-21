@@ -17,7 +17,6 @@ export class ProductDetailsComponent implements OnInit {
     this.loadProduct();
   }
 
-  // tslint:disable-next-line: typedef
   loadProduct() {
     this.shopService.getProduct(+this.activateRoute.snapshot.paramMap.get('id')).subscribe(product => {
       this.product = product;
