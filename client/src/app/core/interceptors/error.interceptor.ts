@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, delay } from 'rxjs/operators';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -17,11 +17,11 @@ constructor(private router: Router, private toastr: ToastrService) {}
                         if (error.error.errors) {
                             throw error.error;
                         } else {
-                            this.toastr.error(error.error.message, error.error.statusCode)
+                            this.toastr.error(error.error.message, error.error.statusCode);
                         }
                     }
                     if (error.status === 401) {
-                        this.toastr.error(error.error.message, error.error.statusCode)
+                        this.toastr.error(error.error.message, error.error.statusCode);
                     }
                     if (error.status === 404) {
                         this.router.navigateByUrl('/not-found');
