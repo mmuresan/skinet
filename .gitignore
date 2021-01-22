@@ -6,6 +6,7 @@ obj
 bin
 appsettings.json
 *.db
+*.rdb
 /dist
 /tmp
 /out-tsc
